@@ -28,12 +28,11 @@ public sealed class LanguageManager
             new LanguageDefinition() // default language
         };
 
-        IReadOnlyList<string> supportedLanguageIdentifiers = DevToys.Localization.CultureHelper.ApplicationCultures;
-        for (int i = 0; i < supportedLanguageIdentifiers.Count; i++)
+        // TODO: Replace with actual supported cultures list. This is a minimal placeholder for clean build/fork.
+        IReadOnlyList<string> supportedLanguageIdentifiers = new List<string> { "en-US" };
+        foreach (var identifier in supportedLanguageIdentifiers)
         {
-            AvailableLanguages.Add(
-                new LanguageDefinition(
-                    supportedLanguageIdentifiers[i]));
+            AvailableLanguages.Add(new LanguageDefinition(identifier));
         }
     }
 
